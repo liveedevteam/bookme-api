@@ -1,0 +1,609 @@
+<% layout('layout/layout') %>
+<% include ../../layout/partials/nav %>
+<div class="page-container">
+    <!-- START HEADER -->
+    <% include ../partials/header.ejs %>
+    <!-- END HEADER -->
+    <!-- START PAGE CONTENT WRAPPER -->
+    <div class="page-content-wrapper ">
+        <!-- START PAGE CONTENT -->
+        <div class="content sm-gutter">
+            <!-- START CONTAINER FLUID -->
+            <div class=" container-fluid   container-fixed-lg">
+                <div class="row">
+                    <div class="col-lg-12" style="margin-bottom: -45px">
+                        <!-- START card -->
+                        <div class="card card-transparent" id="1">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table" id="detailedTable">
+                                        <tbody>
+                                        <tr id="click_1">
+                                            <td class="v-align-middle " style="background: green;width: 15%;">
+                                                <p align="center" style="color:white">GET</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 50%;">
+                                                <p>http://bookme.bluweo.com:3023/api/professional</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 35%;">
+                                                <p>Get All Professional Profile User</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody id="table-detail-1" style="display: none">
+                                        <tr>
+                                            <td class="v-align-middle ">
+                                                <p>Parameter</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                            </td>
+                                            <td class="v-align-middle ">
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-block" style="background: white;display: none" id="body-detail-1">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Body</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json1" style="color:white"></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END card -->
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: -45px">
+                        <!-- START card -->
+                        <div class="card card-transparent" id="2">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table" id="detailedTable">
+                                        <tbody>
+                                        <tr id="click_2">
+                                            <td class="v-align-middle " style="background: green;width: 15%;">
+                                                <p align="center" style="color:white">GET</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 50%;">
+                                                <p>http://bookme.bluweo.com:3023/api/professional/:id</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 35%;">
+                                                <p>Get Single Professional Profile User</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody id="table-detail-2" style="display: none">
+                                        <tr>
+                                            <td class="v-align-middle ">
+                                                <p>Parameter</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p>:id</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p>:id = _id of profile model</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-block" style="background: white;display: none" id="body-detail-2">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Body</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json2" style="color:white"></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END card -->
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: -45px;">
+                        <!-- START card -->
+                        <div class="card card-transparent" id="3">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table" id="detailedTable">
+                                        <tbody>
+                                        <tr id="click_3">
+                                            <td class="v-align-middle " style="background: blueviolet;width: 15%">
+                                                <p align="center" style="color:white">POST</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 50%">
+                                                <p>http://bookme.bluweo.com:3023/api/professional/:id</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 35%">
+                                                <p>Create Professional Profile User</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody id="table-detail-3" style="display: none">
+                                        <tr>
+                                            <td class="v-align-middle ">
+                                                <p align="center">Parameter</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id = _id of profile model</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-block" style="background: white;display: none" id="body-detail-3">
+                                    <div class="row">
+                                        <div class="col-xs-12">Body<br/><br/><br/><br/></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Input</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json6" style="color:white"></pre>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Output</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json3" style="color:white"></pre>
+                                        </div>
+                                        <br/><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END card -->
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: -45px;">
+                        <!-- START card -->
+                        <div class="card card-transparent" id="4">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table" id="detailedTable">
+                                        <tbody>
+                                        <tr id="click_4">
+                                            <td class="v-align-middle " style="background: darkorange;width: 15%">
+                                                <p align="center" style="color:white">PUT</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 50%">
+                                                <p>http://bookme.bluweo.com:3023/api/professional/:id</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 35%">
+                                                <p>Update Professional Profile User</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody id="table-detail-4" style="display: none">
+                                        <tr>
+                                            <td class="v-align-middle ">
+                                                <p align="center">Parameter</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id = _id of profile model</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-block" style="background: white;display: none" id="body-detail-4">
+                                    <div class="row">
+                                        <div class="col-xs-12">Body<br/><br/><br/><br/></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Input</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json7" style="color:white"></pre>
+                                        </div>
+                                    </div>
+                                    <br/><br/>
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Output</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json4" style="color:white"></pre>
+                                        </div>
+                                        <br/><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END card -->
+                    </div>
+                    <div class="col-lg-12" style="margin-bottom: -45px;">
+                        <!-- START card -->
+                        <div class="card card-transparent" id="5">
+                            <div class="card-block">
+                                <div class="table-responsive">
+                                    <table class="table" id="detailedTable">
+                                        <tbody>
+                                        <tr id="click_4">
+                                            <td class="v-align-middle " style="background: red;width: 15%">
+                                                <p align="center" style="color:white">DEL</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 50%">
+                                                <p>http://bookme.bluweo.com:3023/api/professional/:id</p>
+                                            </td>
+                                            <td class="v-align-middle " style="width: 35%">
+                                                <p>DELETE a Professional Profile User</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody id="table-detail-5" style="display: none">
+                                        <tr>
+                                            <td class="v-align-middle ">
+                                                <p align="center">Parameter</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id</p>
+                                            </td>
+                                            <td class="v-align-middle ">
+                                                <p align="center">:id = _id of profile model</p>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="card-block" style="background: white;display: none" id="body-detail-5">
+                                    <div class="row">
+                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">Body</div>
+                                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="background: black">
+                                            <pre id="json5" style="color:white"></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END card -->
+                    </div>
+                </div>
+            </div>
+            <!-- END CONTAINER FLUID -->
+        </div>
+        <!-- END PAGE CONTENT -->
+    </div>
+</div>
+<script>
+    objJson1 = {
+        err: null,
+            response: true,
+            data:
+        [
+            {
+                information: {
+                    tittle: "title",
+                    firstname: "Naphat",
+                    lastname: "Sottiyaphai",
+                    birthdate: "2018-03-29T18:10:56.000Z",
+                    profilephoto: "https://lookaside.facebook.com/platform/professionalpic/?asid=1824253210936569&height=200&width=200&ext=1522606251&hash=AeRwiajsBvCmh9DL",
+                    backgroundphoto: "backgroundphoto",
+                    address: "address",
+                    city: "city",
+                    country: "country",
+                    mobile: "mobile",
+                    email: "n.sottiyaphai@gmail.com",
+                    idcard: "idcard",
+                    favorite: [
+                        "favorite"
+                    ],
+                    _id: "5abd2c308e7b64515b8e495d",
+                    title: "title"
+                },
+                portfolio: {
+                    about: "",
+                    calendar: [],
+                    instagram: "",
+                    conditions: [
+                        "Please hide me"
+                    ],
+                    Gallery: [
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg"
+                    ]
+                },
+                projects: [
+                    {
+                        projectDetail: "iOS Dev",
+                        projectImage: [
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_963a0c24a114a77feeb02598af9be9f4.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_e7975b18539cc14f08ce1430dcae5a48.jpg"
+                        ],
+                        projectName: "bookme",
+                        dateTime: "2018"
+                    }
+                ],
+                packages: [
+                    {
+                        packageName: "iOS App",
+                        packagePrice: "3000",
+                        packageHours: "3"
+                    }
+                ],
+                createDate: "2018-04-08T19:07:41.693Z",
+                _id: "5aca688206518c5920747a9a",
+                uId: "5abd2c308e7b64515b8e495d",
+                __v: 0
+            }
+        ]
+    }
+
+    objJson2 = {
+        err: null,
+        response: true,
+        data:
+            [
+                {
+                    information: {
+                        tittle: "title",
+                        firstname: "Naphat",
+                        lastname: "Sottiyaphai",
+                        birthdate: "2018-03-29T18:10:56.000Z",
+                        profilephoto: "https://lookaside.facebook.com/platform/professionalpic/?asid=1824253210936569&height=200&width=200&ext=1522606251&hash=AeRwiajsBvCmh9DL",
+                        backgroundphoto: "backgroundphoto",
+                        address: "address",
+                        city: "city",
+                        country: "country",
+                        mobile: "mobile",
+                        email: "n.sottiyaphai@gmail.com",
+                        idcard: "idcard",
+                        favorite: [
+                            "favorite"
+                        ],
+                        _id: "5abd2c308e7b64515b8e495d",
+                        title: "title"
+                    },
+                    portfolio: {
+                        about: "",
+                        calendar: [],
+                        instagram: "",
+                        conditions: [
+                            "Please hide me"
+                        ],
+                        Gallery: [
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                            "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg"
+                        ]
+                    },
+                    projects: [
+                        {
+                            projectDetail: "iOS Dev",
+                            projectImage: [
+                                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_963a0c24a114a77feeb02598af9be9f4.jpg",
+                                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_e7975b18539cc14f08ce1430dcae5a48.jpg"
+                            ],
+                            projectName: "bookme",
+                            dateTime: "2018"
+                        }
+                    ],
+                    packages: [
+                        {
+                            packageName: "iOS App",
+                            packagePrice: "3000",
+                            packageHours: "3"
+                        }
+                    ],
+                    createDate: "2018-04-08T19:07:41.693Z",
+                    _id: "5aca688206518c5920747a9a",
+                    uId: "5abd2c308e7b64515b8e495d",
+                    __v: 0
+                }
+            ]
+    }
+
+    objJson3 = {
+        err: "null",
+        response: "true",
+        data: {
+            information: {
+                tittle: "title",
+                firstname: "Naphat",
+                lastname: "Sottiyaphai",
+                birthdate: "2018-03-29T18:10:56.000Z",
+                profilephoto: "https://lookaside.facebook.com/platform/professionalpic/?asid=1824253210936569&height=200&width=200&ext=1522606251&hash=AeRwiajsBvCmh9DL",
+                backgroundphoto: "backgroundphoto",
+                address: "address",
+                city: "city",
+                country: "country",
+                mobile: "mobile",
+                email: "n.sottiyaphai@gmail.com",
+                idcard: "idcard",
+                favorite: [
+                    "favorite"
+                ],
+                _id: "5abd2c308e7b64515b8e495d",
+                title: "title"
+            },
+            portfolio: {
+                about: "",
+                calendar: [],
+                instagram: "",
+                conditions: [
+                    "Please hide me"
+                ],
+                Gallery: [
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg"
+                ]
+            },
+            projects: [
+                {
+                    projectDetail: "iOS Dev",
+                    projectImage: [
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_963a0c24a114a77feeb02598af9be9f4.jpg",
+                        "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_e7975b18539cc14f08ce1430dcae5a48.jpg"
+                    ],
+                    projectName: "bookme",
+                    dateTime: "2018"
+                }
+            ],
+            packages: [
+                {
+                    packageName: "iOS App",
+                    packagePrice: "3000",
+                    packageHours: "3"
+                }
+            ],
+            createDate: "2018-04-08T19:07:41.693Z",
+            _id: "5aca688206518c5920747a9a",
+            uId: "5abd2c308e7b64515b8e495d",
+            __v: 0
+        }
+    }
+
+    objJson4 = {
+        err: "null",
+        response: "true",
+        data: "Update Professional Profile Complete"
+    }
+
+    objJson5 = {
+        err: "null",
+        response: "true",
+        data: "Delete Professional Profile Complete"
+    }
+
+    objJson6 = {
+        portfolio: {
+            about: "",
+            calendar: [],
+            instagram: "",
+            conditions: [
+                "Please hide me"
+            ],
+            Gallery: [
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg"
+            ]
+        },
+        projects: [
+            {
+                projectDetail: "iOS Dev",
+                projectImage: [
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_963a0c24a114a77feeb02598af9be9f4.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_e7975b18539cc14f08ce1430dcae5a48.jpg"
+                ],
+                projectName: "bookme",
+                dateTime: "2018"
+            }
+        ],
+        packages: [
+            {
+                packageName: "iOS App",
+                packagePrice: "3000",
+                packageHours: "3"
+            }
+        ],
+        createDate: "2018-04-08T19:07:41.693Z",
+        _id: "5aca688206518c5920747a9a",
+        uId: "5abd2c308e7b64515b8e495d",
+        __v: 0
+    }
+
+    objJson7 = {
+        portfolio: {
+            about: "",
+            calendar: [],
+            instagram: "",
+            conditions: [
+                "Please hide me"
+            ],
+            Gallery: [
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_03b23588849293ae3a5d7e201df5318f.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_d50bba928fd16af8e374f2ea8a0f93dc.jpg",
+                "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_fb0643f18c82f1e7836248cc1515d4ab.jpg"
+            ]
+        },
+        projects: [
+            {
+                projectDetail: "iOS Dev",
+                projectImage: [
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_963a0c24a114a77feeb02598af9be9f4.jpg",
+                    "http://media.bluweo.com:3022/uploads/5abd2c308e7b64515b8e495d/bookme_e7975b18539cc14f08ce1430dcae5a48.jpg"
+                ],
+                projectName: "bookme",
+                dateTime: "2018"
+            }
+        ],
+        packages: [
+            {
+                packageName: "iOS App",
+                packagePrice: "3000",
+                packageHours: "3"
+            }
+        ],
+        createDate: "2018-04-08T19:07:41.693Z",
+        _id: "5aca688206518c5920747a9a",
+        uId: "5abd2c308e7b64515b8e495d",
+        __v: 0
+    }
+
+    $('.card').on('click', function (event) {
+        let card_id = $(this).attr('id');
+        $('#table-detail-' + card_id).toggle();
+        $('#body-detail-' + card_id).toggle();
+    })
+
+    printJson(objJson1, 1);
+    printJson(objJson2, 2);
+    printJson(objJson3, 3);
+    printJson(objJson4, 4);
+    printJson(objJson5, 5);
+    printJson(objJson6, 6);
+    printJson(objJson7, 7);
+
+    // fetch('http://bookme.bluweo.com:3023/api/professional/5abe3b76e476f963645d44fd')
+    //     .then(res => res.json())
+    //     .then(function (res) {
+    //         printJson(res, 2);
+    //     })
+    //
+    // $("#click2").click(function () {
+    //     $("#json2").toggle("slow");
+    // });
+
+    function printJson(objJson, num) {
+        document.getElementById("json" + num).innerHTML = JSON.stringify(objJson, undefined, 2)
+    }
+
+
+</script>
+
