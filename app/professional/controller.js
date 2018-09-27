@@ -1,4 +1,4 @@
-import Professional from './model';
+import  Professional from './model';
 import Profile from '../profile/model'
 import Home from '../home/model';
 import fetch from 'node-fetch';
@@ -57,7 +57,7 @@ const ProfessionalController = {
                 console.log(professional)
                 Profile.findById(professional.uId, (err, response) => {
                     let profile = response;
-                    if (profile) {
+                    if (profiles.length > 0) {
                         professional.profile = profile
                         res.json({
                             err: {message: ""},
@@ -72,6 +72,7 @@ const ProfessionalController = {
                             data: professional
                         });
                     }
+
                 })
 
             })

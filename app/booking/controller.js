@@ -234,46 +234,475 @@ const BookingController = {
                 Booking.findByIdAndUpdate(bookingId, booking, async (err, response) => {
                     if (err) res.json({err: {message: err}, response: false, data: {}})
                     if(bookingProcessStatus == 0) {
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Cancel Booking')
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Cancel Booking')
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Cancel Booking',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Cancel Booking',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
 
                     if(bookingProcessStatus == 1) {
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Booking request sent for ' + profileCustomer.firstName)
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Booking request sent for ' + profileCustomer.firstName)
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Booking request sent for ' + profileCustomer.firstName,
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
 
                     if(bookingProcessStatus ==2) {
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Congratulations Your Booking is confirmed by ' + profileProfess.firstName + 'already.')
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Your comfirm already sent to ' + profileCustomer.firstName)
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Congratulations Your Booking is confirmed by ' + profileProfess.firstName + 'already.')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Your comfirm already sent to ' + profileCustomer.firstName)
+
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Congratulations Your Booking is confirmed by ' + profileProfess.firstName + 'already.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Your comfirm already sent to ' + profileCustomer.firstName,
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
                     }
 
                     if(bookingProcessStatus ==3) {
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", profileCustomer.firstName + ' already make payment for this job.')
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Your payment was already success.')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", profileCustomer.firstName + ' already make payment for this job.')
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Your payment was already success.')
+
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: profileCustomer.firstName + ' already make payment for this job.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Your payment was already success.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
                     }
 
                     if(bookingProcessStatus ==4) {
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.')
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.')
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.')
+
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Payment from ' + profileCustomer.firstName + ' was confirm by Bluweo.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
 
                     if(bookingProcessStatus ==5) {
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", profileProfess.firstName + ' already complete work. Please approve payment to transfer money to ' + profileCustomer.firstNam)
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Request Transfer already sent to ' + profileCustomer.firstName)
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", profileProfess.firstName + ' already complete work. Please approve payment to transfer money to ' + profileCustomer.firstNam)
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Request Transfer already sent to ' + profileCustomer.firstName)
+
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: profileProfess.firstName + ' already complete work. Please approve payment to transfer money to ' + profileCustomer.firstName,
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Request Transfer already sent to ' + profileCustomer.firstName,
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
                     }
 
                     if(bookingProcessStatus ==6) {
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "",profileCustomer.firstName + ' was approve payment. Money will transfer within 2 business days.')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "",profileCustomer.firstName + ' was approve payment. Money will transfer within 2 business days.')
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: profileCustomer.firstName + ' was approve payment. Money will transfer within 2 business days.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
 
                     if(bookingProcessStatus ==7) {
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Transfer Payment Complete. We hope you enjoy with bookme.')
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Transfer Payment Complete. We hope you enjoy with bookme. And choose we again.')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Transfer Payment Complete. We hope you enjoy with bookme.')
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Transfer Payment Complete. We hope you enjoy with bookme. And choose we again.')
+
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Transfer Payment Complete. We hope you enjoy with bookme. And choose we again.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Transfer Payment Complete. We hope you enjoy with bookme.',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
 
                     if(bookingProcessStatus ==8) {
-                        const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Work Done')
-                        const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Work Done')
+                        // const sendProfess = await sendNotification(profileProfess.tokenFirebase, "", 'Work Done')
+                        // const sendCustomer = await sendNotification(profileCustomer.tokenFirebase, "", 'Work Done')
+                        const messageCM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileCustomer.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Work Done',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messageCM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
+
+                        const messagePM = { //this may vary according to the message type (single recipient, multicast, topic, et cetera)
+                            to: profileProfess.tokenFirebase,
+                            collapse_key: 'your_collapse_key',
+
+                            notification: {
+                                title: 'Bookme',
+                                body: 'Work Done',
+                                sound: 'enable',
+                                badge : 1,
+                                priority:'hight'
+                                // click_action : "OPEN_WORK_VIEW"
+                            },
+
+                            data: {
+                                my_key: '',
+                                my_another_key: 'my another value'
+                            }
+                        };
+
+                        fcm.send(messagePM, function(err, response){
+                            if (err) {
+                                console.log("Something has gone wrong!");
+                            } else {
+                                console.log("Successfully sent with response: ", response);
+                            }
+                        });
                     }
                     if (response) {
                         res.json({
@@ -357,7 +786,17 @@ const BookingController = {
                 for (let i = 0; allBooking.length > i; i++) {
                     if ((allBooking[i].cId == uId) || (allBooking[i].pId == uId)) {
                         let profile = await getProfileById(allBooking[i].pId)
+                        if(profile) {
+                            allBooking[i].profile = profile
+                        } else {
+                            allBooking[i].profile = []
+                        }
                         allBooking[i].profile = profile
+                        // if(allBooking[i].cId == uId) {
+                        //     allBooking[i].employ = allBooking[i]
+                        // } else {
+                        //     allBooking[i].job = allBooking[i]
+                        // }
                         uIdArray.push(allBooking[i]);
                         // console.log(i)
                         // console.log(allBooking.length)
@@ -396,6 +835,68 @@ const BookingController = {
     async omiseCreditCard(req, res) {
         let token = req.params.token
         console.log("Omise Credit Card:"+ token)
+    },
+
+    async checkedDay(req, res) {
+        const bookings = await getAllBooking()
+        // console.log(bookings)
+        for(let i=0;i<bookings.length;i++) {
+            // console.log(bookings[i].bookingDate)
+            for(let j=0;j<bookings[i].bookingDate.length;j++) {
+                let date = new Date()
+                console.log(date.getDay())
+                console.log(date)
+                let dateArray = bookings[i].bookingDate[j].split("-")
+                let bookingYear = parseInt(dateArray[0])
+                let bookingMonth = parseInt(dateArray[1])
+                let bookingDay = parseInt(dateArray[2])
+                // console.log(dateArray[0])
+                // console.log(dateArray[1])
+                // console.log(dateArray[2])
+                // console.log(time[1])
+                // console.log(date.getDate())
+                // console.log(date.getMonth())
+                // console.log(date.getFullYear())
+                console.log(bookingDay +"||"+parseInt(date.getDate()))
+                if(
+                    (bookingYear - parseInt(date.getFullYear()) <= 0) &&
+                    (bookingMonth - parseInt(date.getMonth()) <= 0) &&
+                    (bookingDay - parseInt(date.getDay()) == 1)) {
+
+                    const message = {
+                        to: bookings[i].pId,
+                        collapse_key: "",
+
+                        notification: {
+                            title: 'Bookme',
+                            body: "เหลือเวลาทำงานอีกหนึ่งวัน",
+                            sound: 'enable',
+                            badge : 1,
+                            priority:'hight'
+                            // click_action : "OPEN_WORK_VIEW"
+                        },
+
+                        data: {
+                            my_key: key,
+                            my_another_key: 'my another value'
+                        }
+                    };
+
+                    fcm.send(message, function(err, response){
+                        if (err) {
+                            console.log("Something has gone wrong!");
+                            res.json({err: {msg: ""}, response: false, data: {msg: err}})
+                        } else {
+                            console.log("Successfully sent with response: ", response);
+                            res.json({err: {msg: ""}, response: true, data: {msg: "Send Complete"}})
+                        }
+                    });
+                } else {
+                    res.json({err: {msg: ""}, response: true, data: {msg: "No Date"}})
+                }
+
+            }
+        }
     }
 };
 
@@ -448,7 +949,7 @@ function sendNotification(receivpient, key, msg) {
             notification: {
                 title: 'Bookme',
                 body: msg,
-                sound: 'default',
+                sound: 'enable',
                 badge : 1,
                 priority:'hight'
                 // click_action : "OPEN_WORK_VIEW"

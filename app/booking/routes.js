@@ -1,4 +1,4 @@
-import controller from './controller_backup';
+import controller from './controller';
 
 export function setup(router) {
     router
@@ -9,4 +9,5 @@ export function setup(router) {
         .delete('/:id', controller.delete)
         .get('/get-u-id/:id', controller.getByUId)
         .post('/omise/:token', controller.omiseCreditCard)
+        .post('/checked-norti-day', controller.checkedDay)
 }

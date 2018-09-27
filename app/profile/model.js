@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const profileSchema = mongoose.Schema({
     fId: { type: String, require: true },
     tokenFirebase: { type: String, default: ''},
-    tittle: { type: String, default: 'title'},
+    title: { type: String, default: 'title'},
     somethingAboutYou: { type: String, default: 'Something About You'},
     firstName: {type: String, default: 'fname'},
     lastName: {type: String, default: 'lname'},

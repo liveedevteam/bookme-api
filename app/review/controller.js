@@ -7,22 +7,45 @@ const ReviewController = {
 
     getAll(req, res) {
         Review.find({}, (err, response) => {
-            res.json({
-                err: err,
-                response: true,
-                data: response
-            });
+            for(let i = 0; i < response.length; i++) {
+                if(response[i].uId) {
+                    Profile.findById(response[i].uId, (err, responseProfile) => {
+                        console.log(responseProfile)
+                        if(responseProfile) {
+                            response[i].reviewProfile = responseProfile
+                        } else {
+                            response[i].reviewProfile = []
+                        }
+                        if((i+1)==response.length) {
+                            res.json({
+                                err: err,
+                                response: true,
+                                data: response
+                            });
+                        }
+                    })
+                }
+            }
         });
     },
 
     get(req, res) {
+        console.log(req.params.id)
         Review.findById(req.params.id, (err, response) => {
             console.log(response);
-            res.json({
-                err: err,
-                response: true,
-                data: response
-            });
+            if(err) res.json({err: err, response: false, data: response});
+            if(response.uId) {
+                Profile.findById(response.uId, (err, responseProfile) => {
+                    // console.log(responseProfile)
+                    console.log(responseProfile)
+                    response.reviewProfile = responseProfile
+                    res.json({
+                        err: {msg: ""},
+                        response: true,
+                        data: response
+                    })
+                })
+            }
         })
     },
 

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var Float = require('mongoose-float').loadType(mongoose);
 
 const bookingSchema = mongoose.Schema({
     cId: {type: String, required: true},
@@ -10,8 +11,8 @@ const bookingSchema = mongoose.Schema({
     createDate: {type: Date, default: Date.now()},
     bookingPackage: {type: String, default: ""},
     bookingPackageName: {type: String, default: ""},
-    bookingPackagePrice: {type: Number, default: ""},
-    bookingDate: {type: Array, default: ""},
+    bookingPackagePrice: {type: Float, default: ""},
+    bookingDate: {type: Array, default: []},
     bookingProcessStatus: {type: Number, default: ""},
     bookingLocation: {
         type: Object, default: {
@@ -28,7 +29,9 @@ const bookingSchema = mongoose.Schema({
         ]},
     bookingWorkUpload: {
         bookingImageUpload: []
-    }
+    },
+    job: {type: Array, default: ""},
+    employ: {type: Array, default: ""}
 });
 
 module.exports = mongoose.model('Booking', bookingSchema);

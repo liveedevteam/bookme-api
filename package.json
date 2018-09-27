@@ -27,6 +27,7 @@
     "global": "^4.3.2",
     "jsonwebtoken": "^8.2.1",
     "mongoose": "^5.0.13",
+    "mongoose-float": "^1.0.2",
     "node-fetch": "^2.1.2",
     "npm": "^5.8.0",
     "passport-facebook": "^2.1.1",
